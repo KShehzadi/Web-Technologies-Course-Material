@@ -1,0 +1,59 @@
+<HTML>
+<div style="padding-top:40px;">
+    <div style="position:relative; width: 40%; height: 400px; border: 1px solid; margin: auto;padding-top:20px; padding-left: 00px; border-radius: 10px; box-shadow: 5px 10px 50px; background-color: #F9F9F9;">
+
+        <h4 style="position: relative; left: 38%;">LogIn Page</h4>
+
+                    <div class="form-group">
+                        <label for="Account" class="control-label col-md-2">Account</label>
+                        <div class="col-md-10">
+                            <select id="Account" name="Account" class="form-control">
+                                <option value="Admin">Admin</option>
+                                <option value="Student">Student</option>
+                                <option value="Parent">Parent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div style="position: relative; left: 48%;">
+                            <a id="LogIn" class="btn btn-primary" style="background-color:black; border-color:black;" >LogIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<div id="sample"></div>
+<div>
+    <a class="btn btn-primary" style="background-color:black" href=@Url.Action("Index", "Home")>Back</a>
+</div>
+
+
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+    // instantiate the dialog on document ready
+    $("select.Account").change(function(){
+        var selectedCountry = $(this).children("option:selected").val();
+        alert("You have selected the Account - " + selectedCountry);
+    });
+    $("#LogIn").click(function() {
+        // open the dialog on the submit button click
+        
+        document.getElementById("#sample").innerHTML = "hello";
+        window.location.href = @Url.Action("Index", "Home");
+    });
+});
+</script>
+
+}
+
+
+</html>

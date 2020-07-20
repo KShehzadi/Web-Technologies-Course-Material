@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h1, h2{
+            text-align: center;
+            color: black;
+            background-color: wheat;
+        }
+    </style>
+<body>
+<h1>JavaScript Assignment # 1</h1>
+<h2>Finding HTML Elements by Id</h2>
+
+<p id="intro">Hello World!</p>
+<p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+var myElement = document.getElementById("intro");
+document.getElementById("demo").innerHTML = 
+"The text from the intro paragraph is " + myElement.innerHTML;
+</script>
+    
+<h2>Finding HTML Elements Using document.forms</h2>
+
+<form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+</form> 
+
+<p>Click "Try it" to display the value of each element in the form.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+
+<script>
+function myFunction() {
+  var x = document.forms["frm1"];
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+  }
+  document.getElementById("demo1").innerHTML = text;
+}
+</script>
+<h2>document.write() function to display Current date in document</h2>
+<script>
+document.write(Date());
+</script>
+    
+<h2>JavaScript can Change HTML</h2>
+
+<p id="p1">Hello World!</p>
+
+<script>
+document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+<p>The paragraph above was changed by a script.</p>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='colored.jpg'">Fill Color in flower.</button>
+
+<img id="myImage" src="blackandwhite.jpg" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='blackandwhite.jpg'">Erase the Color.</button>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+<h2>window.alert() function in JavaScript</h2>
+    <p>window alert shown at loading of page.</p>
+    <script>
+        window.alert("window alert")
+    </script>
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation and returns the result it multiplies 3 and 4 and returns the result:</p>
+
+<p id="demo2"></p>
+
+<script>
+var x = myFunction1(4, 3);
+document.getElementById("demo2").innerHTML = x;
+
+function myFunction1(a, b) {
+  return a * b;
+}
+</script>
+    <h2>Changing document text by clicking a button</h2>
+<button onclick="document.getElementById('demo3').innerHTML=Date()">The time is?</button>
+
+<p id="demo3"></p>
+<br></br>
+    </body>
+<footer style="text-align: center;background-color: wheat;">All rights reserved.</footer>
+</html>
